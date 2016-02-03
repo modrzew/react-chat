@@ -53,12 +53,15 @@ export default class App extends Component {
                         <NickNameView changeName={this.changeName.bind(this)} />
                     :
                         <div>
-                            <UsersList users={this.state.users} />
-                            <MessageList messages={this.state.messages} />
-                            <NewMessageContainer sendMessage={this.sendMessage.bind(this)} />
+                            <div>
+                                <UsersList users={this.state.users} />
+                                <MessageList messages={this.state.messages} />
+                            </div>
+                            <div className="col-md-9 col-md-offset-3">
+                                <NewMessageContainer sendMessage={this.sendMessage.bind(this)} />
+                            </div>
                         </div>
                 )}
-            </div>
         );
     }
 }

@@ -9,7 +9,7 @@ class User extends Component {
 export default class UsersList extends Component {
     render () {
         return (
-            <div className="col-md-3">
+            <div className="header">
                 <ul>
                     {this.props.users.map((user) => <User nick={user} />)}
                 </ul>

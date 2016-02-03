@@ -25,7 +25,7 @@ class Message extends Component {
 export default class MessageList extends Component {
     render() {
         return (
-            <div className="col-md-9">
+            <div>
                 <ul>
                     {this.props.messages.map((msg) => <Message {...msg} />)}
                 </ul>
