@@ -7,17 +7,27 @@ export default class App extends Component {
         super();
         this.state = {
             myName: 'modrzew',
-            messages: [], // [1, 2, 3, 4].map((obj) => {return {id: obj, name: obj, content: obj}; }),
+            messages: [],
             users: ['bitrut', 'mnowakowska', 'modrzew', 'avalanchy']
         }
     }
-    sendMessage (content) {
+    // DEBUG
+    componentWillMount () {
+        setTimeout(() => {
+            this.newMessage('herp', new Date('2016-02-03T21:14:50'), 'lololo')
+        }, 3000);
+    }
+    newMessage (name, date, content) {
         this.setState({
             messages: this.state.messages.concat([{
-                name: this.state.myName,
+                name: name,
+                date: date,
                 content: content
             }])
         });
+    }
+    sendMessage () {
+        // TODO: ha ha
     }
     render() {
         return (
