@@ -21,7 +21,7 @@ export default class App extends Component {
                     this.newMessage(msg.sender, new Date(msg.timestamp), msg.message);
                 }
             }),
-            myName: 'modrzew',
+            myName: '',
             messages: [],
             users: ['bitrut', 'blah', 'lol']
         }
@@ -38,12 +38,25 @@ export default class App extends Component {
     sendMessage (content) {
         this.state.connection.send(content);
     }
+    changeName (name) {
+        this.setState({
+            myName: name
+        })
+    }
     render() {
         return (
             <div>
-                <UsersList users={this.state.users} />
-                <MessageList messages={this.state.messages} />
-                <NewMessageContainer sendMessage={this.sendMessage.bind(this)} />
+
+                {(
+                    !this.state.myName ?
+                        <NickNameView changeName={this.changeName.bind(this)} />
+                    :
+                        <div>
+                            <UsersList users={this.state.users} />
+                            <MessageList messages={this.state.messages} />
+                            <NewMessageContainer sendMessage={this.sendMessage.bind(this)} />
+                        </div>
+                )}
             </div>
         );
     }
