@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
 import MessageList from './MessageList';
 import NewMessageContainer from './NewMessage';
+import Connection from './connection';
 
 export default class App extends Component {
     constructor () {
         super();
         this.state = {
+            connection: new Connection((ws) => {
+                console.log('Connected!');
+            }, (msg) => {
+                this.newMessage('someone', new Date(), 'something');
+            }),
             myName: 'modrzew',
             messages: [],
             users: ['bitrut', 'mnowakowska', 'modrzew', 'avalanchy']
         }
-    }
-    // DEBUG
-    componentWillMount () {
-        setTimeout(() => {
-            this.newMessage('herp', new Date('2016-02-03T21:14:50'), 'lololo')
-        }, 3000);
     }
     newMessage (name, date, content) {
         this.setState({
@@ -26,8 +26,8 @@ export default class App extends Component {
             }])
         });
     }
-    sendMessage () {
-        // TODO: ha ha
+    sendMessage (content) {
+        this.state.connection.send(content);
     }
     render() {
         return (
