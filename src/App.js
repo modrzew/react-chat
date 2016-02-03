@@ -16,7 +16,8 @@ export default class App extends Component {
                         users: msg.replace('/users ', '').split(',')
                     });
                 } else {
-                    this.newMessage('someone', new Date(), 'something');
+                    msg = JSON.parse(msg);
+                    this.newMessage(msg.sender, new Date(msg.timestamp), msg.message);
                 }
             }),
             myName: 'modrzew',

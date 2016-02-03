@@ -1,6 +1,6 @@
 export default function Connection (ready, recv) {
     var that = this;
-    var uri = "ws://localhost:9000/";
+    var uri = "ws://" + window.location.hostname + ":9000/";
 
     this.ws = new WebSocket(uri);
 
