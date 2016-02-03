@@ -1,6 +1,6 @@
-function Connection (ready, recv) {
+export default function Connection (ready, recv) {
     var that = this;
-    var uri = "ws://echo.websocket.org/";
+    var uri = "ws://localhost:9000/";
 
     this.ws = new WebSocket(uri);
 
@@ -32,5 +32,5 @@ function timeoutExample() {
     conn.send('1000!');
 }
 
-var conn = new Connection(connectionReadyExample, msgReceivedExample);
-setTimeout(timeoutExample, 1000);
+// var conn = new Connection(connectionReadyExample, msgReceivedExample);
+// setTimeout(timeoutExample, 1000);
