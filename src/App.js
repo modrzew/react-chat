@@ -42,6 +42,7 @@ export default class App extends Component {
         this.setState({
             myName: name
         })
+        this.sendMessage('/username ' + name);
     }
     render() {
         return (
