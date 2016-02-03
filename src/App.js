@@ -3,6 +3,7 @@ import MessageList from './MessageList';
 import NewMessageContainer from './NewMessage';
 import UsersList from './UsersList';
 import Connection from './connection';
+import NickNameView from './NickNameView';
 
 export default class App extends Component {
     constructor () {
