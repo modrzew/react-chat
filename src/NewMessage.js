@@ -34,7 +34,7 @@ export default class NewMessageContainer extends Component {
     }
     render () {
         return (
-            <div>
+            <div className="col-md-9 col-md-offset-3">
                 <Input value={this.state.value} handleChange={this.handleChange.bind(this)} sendMessage={this.sendMessage.bind(this)} />
                 <Button sendMessage={this.sendMessage.bind(this)} />
             </div>

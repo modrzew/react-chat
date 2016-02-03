@@ -25,9 +25,11 @@ class Message extends Component {
 export default class MessageList extends Component {
     render() {
         return (
-            <ul>
-                {this.props.messages.map((msg) => <Message {...msg} />)}
-            </ul>
+            <div className="col-md-9 col-md-offset-3">
+                <ul>
+                    {this.props.messages.map((msg) => <Message {...msg} />)}
+                </ul>
+            </div>
         )
     }
 }

@@ -14,7 +14,7 @@ export default class App extends Component {
             }),
             myName: 'modrzew',
             messages: [],
-            users: ['bitrut', 'mnowakowska', 'modrzew', 'avalanchy']
+            users: []
         }
     }
     newMessage (name, date, content) {
