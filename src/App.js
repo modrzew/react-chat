@@ -47,7 +47,6 @@ export default class App extends Component {
     render() {
         return (
             <div>
-
                 {(
                     !this.state.myName ?
                         <NickNameView changeName={this.changeName.bind(this)} />
@@ -55,13 +54,14 @@ export default class App extends Component {
                         <div>
                             <div>
                                 <UsersList users={this.state.users} />
-                                <MessageList messages={this.state.messages} />
+                                <NewMessageContainer sendMessage={this.sendMessage.bind(this)} />
                             </div>
                             <div className="col-md-9 col-md-offset-3">
-                                <NewMessageContainer sendMessage={this.sendMessage.bind(this)} />
+                                <MessageList messages={this.state.messages} />
                             </div>
                         </div>
                 )}
+            </div>
         );
     }
 }
