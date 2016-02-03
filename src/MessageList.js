@@ -8,16 +8,10 @@ class Message extends Component {
 
 
 export default class MessageList extends Component {
-    constructor () {
-        super();
-        this.state = {
-            messages: [1, 2, 3, 4].map((obj) => {return {id: obj, name: obj, content: obj}; })
-        };
-    }
     render() {
         return (
             <ul>
-                {this.state.messages.map((msg) => <Message {...msg} />)}
+                {this.props.messages.map((msg) => <Message {...msg} />)}
             </ul>
         )
     }
