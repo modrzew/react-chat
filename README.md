@@ -20,4 +20,4 @@ npm start
 open http://localhost:3000
 ```
 
-Note: this requires a websocket server which, as of now, is not done yet.
+Note: this requires a websocket server available here: [bitrut/twisted-chat](https://github.com/bitrut/twisted-chat).

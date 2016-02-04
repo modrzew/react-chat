@@ -18,19 +18,24 @@ export default function Connection (ready, recv) {
     }
 }
 
-function connectionReadyExample(ws) {
-    console.log('READY CALLBACK: Sending Hello!')
-    ws.send('Hello!');
-}
-
-function msgReceivedExample(msg) {
-    console.log('RECEIVED CALLBACK: Message received: ' + msg );
-}
-
-function timeoutExample() {
-    console.log('TIMEOUT: Sending: 1000!');
-    conn.send('1000!');
-}
-
-// var conn = new Connection(connectionReadyExample, msgReceivedExample);
-// setTimeout(timeoutExample, 1000);
+/**
+ * HOW TO USE:
+ *
+ * function connectionReadyExample(ws) {
+ *     console.log('READY CALLBACK: Sending Hello!')
+ *     ws.send('Hello!');
+ * }
+ *
+ * function msgReceivedExample(msg) {
+ *     console.log('RECEIVED CALLBACK: Message received: ' + msg );
+ * }
+ *
+ * function timeoutExample() {
+ *     console.log('TIMEOUT: Sending: 1000!');
+ *     conn.send('1000!');
+ * }
+ *
+ * var conn = new Connection(connectionReadyExample, msgReceivedExample);
+ * setTimeout(timeoutExample, 1000);
+ *
+ */
